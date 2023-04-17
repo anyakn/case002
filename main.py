@@ -55,8 +55,6 @@ if r.lower()=='да':
             if persantage_1.lower() == 'да':
                 persantage = int(input('Введите ваш доход как учредителя доверительного управления ипотечным покрытием.'))
                 persantage *= 0.09
-        else:
-            persantage = 0
         gain = input('Получали ли вы выигрыши/призы в конкурсах, играх и других мероприятиях в целях рекламы, в части превышения установленных размеров?')
         if gain.lower() == 'да':
             gain = int(input('Введите стоимость выиграша/приза.'))
@@ -126,4 +124,4 @@ else:
 
     others = int(input('Если у вас есть другие доходы, введите их сумму.'))
     others *= 0.3
-s = asset+labor+divident+persantage+others
+s = asset+labor+divident+persantage+deposit+gain+cooperative+others
