@@ -44,6 +44,14 @@ if r.lower()=='да':
                 CLC = tax_base * 0.13
             else:
                 CLC = tax_base * 0.15
+        others = input('Получали ли вы иные виды доходов?')
+        if others.lower() == 'да':
+            tax_base = int(input(' Введите полученную сумму дохода: '))
+            others = tax_base * 0.30
+        others = input('Получали ли вы иные виды доходов?')
+        if others.lower() == 'да':
+            tax_base = int(input(' Введите полученную сумму дохода: '))
+            others = tax_base * 0.30
 
 
 else:
