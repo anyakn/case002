@@ -11,48 +11,40 @@ if r.lower()=='да':
         'Вы находились 183 дня в РФ за последние 12 месяцев или являютесь российским военным, служащим за границей,'
         'или сотрудником органов власти, командированным за рубеж.? ')
     if r.lower() == 'да':
-        asset = input('Получали ли вы доход от продажи имущества? ')
+        asset = input(ru.asset_q1)
         if asset.lower() == 'да':
-            family = input('У вас семья с двумя и более детьми и доходы от продажи объекта имущества получает '
-                           'несовершеннолетний ребенок из такой семьи.?')
-            exemption = input(
-                'Имущество было в собственности больше трёх лет и была получена по наследству или в дар от '
-                'родственников, по договору ренты, приватизирована или это единственное жильё? ')
-            how_much = input('Имущество находится у вас в собственности менее трех или пяти лет,'
-                             'при условии, что доход от продажи не превышает 1 млн руб.( для кваритиры), '
-                             'а для иного имущества (гаражи, автомобили и т.д.) — 250 тыс. руб? ')
-            how_long = input('Владеете ли вы имуществом дольше 5 лет? ')
-            gain = input('Продали ли вы имущество за меньшую сумму, чем приобрели его? ')
+            family = input(ru.asset_q2)
+            exemption = input(ru.asset_q3)
+            how_much = input(ru.asset_q4)
+            how_long = input(ru.asset_q5)
+            gain = input(ru.asset_q6)
             if family.lower() == 'да' or exemption.lower() == 'да' or how_much.lower() == 'да' or how_long.lower() == 'да' or gain.lower() == 'да':
                 asset = 0
             else:
-                tax_base = int(input(' Введите сумму полученного дохода с продажи имущества '
-                                     '(т.е. разность между вырученной суммой и стоимости, по которой вы её '
-                                     ' приобрели изначально). '))
+                tax_base = int(input(ru.tax_base_asset))
                 asset = tax_base * 0.13
-        labor = input('Получали ли вы доход от осуществления трудовой деятельности? ')
+        labor = input(ru.labor_q1)
         if labor.lower() == 'да':
-            tax_base = int(input(' Введите сумму дохода полученного от осуществления трудовой деятельности: '))
+            tax_base = int(input(ru.tax_base_labor))
             if tax_base < 5000000:
                 labor = tax_base * 0.13
             else:
                 labor = tax_base * 0.15
-        CLC = input('Получали ли вы доход от вознаграждения по гражданско-правовым договорам? ')
+        CLC = input(CLC_q1)
         if CLC.lower() == 'да':
-            tax_base = int(input(' Введите сумму дохода полученного от осуществления трудовой деятельности: '))
+            tax_base = int(input(tax_base_CLC))
             if tax_base < 5000000:
                 CLC = tax_base * 0.13
             else:
                 CLC = tax_base * 0.15
-        others = input('Получали ли вы иные виды доходов?')
+        divident = input(divident_q1)
+        if divident.lower() == 'да':
+            tax_base = int(input(tax_base_divident))
+            divident = tax_base * 0.13
+        others = input(others_q1)
         if others.lower() == 'да':
-            tax_base = int(input(' Введите полученную сумму дохода: '))
+            tax_base = int(input(tax_base_other))
             others = tax_base * 0.30
-        others = input('Получали ли вы иные виды доходов?')
-        if others.lower() == 'да':
-            tax_base = int(input(' Введите полученную сумму дохода: '))
-            others = tax_base * 0.30
-
 
 else:
     asset = input('Получали ли вы доход от продажи имущества?')
