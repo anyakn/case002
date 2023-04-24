@@ -12,34 +12,44 @@ if r.lower()=='да':
         how_much = input(ru.asset_q4)
         how_long = input(ru.asset_q5)
         profit = input(ru.asset_q6)
+        tax_base = int(input(ru.tax_base_asset))
         if family.lower() == 'да' or exemption.lower() == 'да' or how_much.lower() == 'да' or how_long.lower() == 'да' \
                 or profit.lower() == 'да':
             asset = 0
-        else:
-            tax_base = int(input(ru.tax_base_asset))
+        elif tax_base < 5000000:
             asset = tax_base * 0.13
+    else:
+        asset = 0
     labor = input(ru.labor_q1)
     if labor.lower() == 'да':
         tax_base = int(input(ru.tax_base_labor))
         if tax_base < 5000000:
             labor = tax_base * 0.13
-        else:
+        elif tax_base >= 5000000:
             labor = tax_base * 0.15
+    else:
+        labor = 0
     CLC = input(ru.CLC_q1)
     if CLC.lower() == 'да':
         tax_base = int(input(ru.tax_base_CLC))
         if tax_base < 5000000:
             CLC = tax_base * 0.13
-        else:
+        elif tax_base >= 5000000:
             CLC = tax_base * 0.15
+    else:
+        CLC = 0
     divident = input(ru.divident_q1)
     if divident.lower() == 'да':
         tax_base = int(input(ru.tax_base_divident))
         divident = tax_base * 0.13
+    else:
+        divident = 0
     others = input(ru.others_q1)
     if others.lower() == 'да':
         tax_base = int(input(ru.tax_base_other))
         others = tax_base * 0.30
+    else:
+        others = 0
     percentage = input(ru.percentage_n1)
     if percentage.lower() == 'да':
         percentage = int(input(ru.tax_base_percentage))
@@ -76,6 +86,15 @@ if r.lower()=='да':
         cooperative *=0.35
     else:
         cooperative = 0
+    asset = int(asset)
+    labor = int(labor)
+    CLC = int(CLC)
+    percentage = int(percentage)
+    gain = int(gain)
+    coop = int(coop)
+    others = int(others)
+    deposit = int(deposit)
+    cooperative = int(cooperative)
     s = asset + labor + CLC + divident + percentage + gain + coop + others + deposit + cooperative
     print(s)
 else:
