@@ -113,7 +113,7 @@ if r.lower() == ru.yes:
     deposit = int(deposit)
     cooperative = int(cooperative)
     s = asset + labor + CLC + divident + percentage + gain + coop + others + deposit + cooperative
-    print(s)
+    print(ru.tax, s)
 
 else:
     asset = input(ru.asset_q1)
