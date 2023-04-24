@@ -130,5 +130,5 @@ else:
         others *= 0.3
     else:
         others = 0
-    s = asset+labor+divident+persantage+deposit+gain+cooperative+others
+    s = asset+labor+divident+others
     print(s)
