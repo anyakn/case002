@@ -113,12 +113,13 @@ else:
     if divident.lower() == 'да':
         divident_cnt = input('Получали ли вы дивиденты от российских организаций?')
         if divident_cnt.lower() == 'да':
-            divident = int(input('Введите ваш доход от российских ораганизаций.'))
-            divident *= 0.15
+            divident_cnt = int(input('Введите ваш доход от российских ораганизаций.'))
+            divident_cnt *= 0.15
         divident_abr = input('Получали ли вы дивиденды по акциям международных холдинговых компаний, которые являются публичными компаниями?')
         if divident_abr.lower() == 'да':
-            divident = int(input('Введите ваш доход от международных холдинговых компаний.'))
-            divident *= 0.05
+            divident_abr = int(input('Введите ваш доход от международных холдинговых компаний.'))
+            divident_abr *= 0.05
+        divident = divident_abr+divident_cnt
     else:
         divident = 0
 
