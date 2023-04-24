@@ -40,16 +40,19 @@ if r.lower()=='да':
     if others.lower() == 'да':
         tax_base = int(input(ru.tax_base_other))
         others = tax_base * 0.30
-    persantage = input('Получали ли вы доход по облигациям с ипотечным покрытием, приобретенным до 1 января 2007 года?')
-    if persantage.lower() == 'да':
-        persantage = int(input('Введите ваш доход по облигациям с ипотечным покрытием.'))
-        persantage *= 0.09
+    percentage = input('Получали ли вы доход по облигациям с ипотечным покрытием, приобретенным до 1 января 2007 года?')
+    if percentage.lower() == 'да':
+        percentage = int(input('Введите ваш доход по облигациям с ипотечным покрытием.'))
+        percentage *= 0.09
     else:
-        persantage_1 = input('Получали ли вы доход как учредитель доверительного управления ипотечным покрытием по сертификатам,'
+        percentage = 0
+    percentage_1 = input('Получали ли вы доход как учредитель доверительного управления ипотечным покрытием по сертификатам,'
                 'приобретенным до 1 января 2007 года? ')
-        if persantage_1.lower() == 'да':
-            persantage = int(input('Введите ваш доход как учредителя доверительного управления ипотечным покрытием.'))
-            persantage *= 0.09
+    if percentage_1.lower() == 'да':
+        percentage = int(input('Введите ваш доход как учредителя доверительного управления ипотечным покрытием.'))
+        percentage *= 0.09
+    else:
+        percentage = 0
     gain = input('Получали ли вы выигрыши/призы в конкурсах, играх и других мероприятиях в целях рекламы, в части превышения установленных размеров?')
     if gain.lower() == 'да':
         gain = int(input('Введите стоимость выиграша/приза.'))
@@ -74,7 +77,7 @@ if r.lower()=='да':
         cooperative *=0.35
     else:
         cooperative = 0
-    s = asset + labor + CLC + divident + persantage + gain + coop + others + deposit + cooperative
+    s = asset + labor + CLC + divident + percentage + gain + coop + others + deposit + cooperative
     print(s)
 else:
     asset = input('Получали ли вы доход от продажи имущества? ')
