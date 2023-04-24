@@ -11,8 +11,9 @@ if r.lower()=='да':
         exemption = input(ru.asset_q3)
         how_much = input(ru.asset_q4)
         how_long = input(ru.asset_q5)
-        gain = input(ru.asset_q6)
-        if family.lower() == 'да' or exemption.lower() == 'да' or how_much.lower() == 'да' or how_long.lower() == 'да' or gain.lower() == 'да':
+        profit = input(ru.asset_q6)
+        if family.lower() == 'да' or exemption.lower() == 'да' or how_much.lower() == 'да' or how_long.lower() == 'да' \
+                or profit.lower() == 'да':
             asset = 0
         else:
             tax_base = int(input(ru.tax_base_asset))
@@ -55,12 +56,12 @@ if r.lower()=='да':
         gain *= 0.35
     else:
         gain = 0
-    others = input('Платили ли вы за использование денежных средств членов кредитного потребительского кооператива, в части превышения установленных размеров?')
-    if others.lower() == 'да':
-        others = int(input('Введите сумму за использование.'))
-        others *=0.35
+    coop = input('Платили ли вы за использование денежных средств членов кредитного потребительского кооператива, в части превышения установленных размеров?')
+    if coop.lower() == 'да':
+        coop = int(input('Введите сумму за использование.'))
+        coop *=0.35
     else:
-        others = 0
+        coop = 0
     deposit = input('Превышал ли ваш доход по вкладам в банках установленных размеров?')
     if deposit.lower() == 'да':
         deposit = int(input('Введите ваш доход по вкладам в банках.'))
@@ -73,6 +74,8 @@ if r.lower()=='да':
         cooperative *=0.35
     else:
         cooperative = 0
+    s = asset + labor + CLC + divident + persantage + gain + coop + others + deposit + cooperative
+    print(s)
 else:
     asset = input('Получали ли вы доход от продажи имущества? ')
     if asset.lower() == 'да':
@@ -127,6 +130,5 @@ else:
         others *= 0.3
     else:
         others = 0
-
-s = asset+labor+divident+persantage+deposit+gain+cooperative+others
-print(s)
+    s = asset+labor+divident+persantage+deposit+gain+cooperative+others
+    print(s)
