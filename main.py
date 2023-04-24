@@ -40,40 +40,39 @@ if r.lower()=='да':
     if others.lower() == 'да':
         tax_base = int(input(ru.tax_base_other))
         others = tax_base * 0.30
-    percentage = input('Получали ли вы доход по облигациям с ипотечным покрытием, приобретенным до 1 января 2007 года?')
+    percentage = input(ru.percentage_n1)
     if percentage.lower() == 'да':
-        percentage = int(input('Введите ваш доход по облигациям с ипотечным покрытием.'))
+        percentage = int(input(ru.tax_base_percentage))
         percentage *= 0.09
     else:
         percentage = 0
-    percentage_1 = input('Получали ли вы доход как учредитель доверительного управления ипотечным покрытием по сертификатам,'
-                'приобретенным до 1 января 2007 года? ')
+    percentage_1 = input(ru.percentage_n2)
     if percentage_1.lower() == 'да':
-        percentage = int(input('Введите ваш доход как учредителя доверительного управления ипотечным покрытием.'))
+        percentage = int(input(ru.tax_base_percentage2))
         percentage *= 0.09
     else:
         percentage = 0
-    gain = input('Получали ли вы выигрыши/призы в конкурсах, играх и других мероприятиях в целях рекламы, в части превышения установленных размеров?')
+    gain = input(ru.gain_n1)
     if gain.lower() == 'да':
-        gain = int(input('Введите стоимость выиграша/приза.'))
+        gain = int(input(ru.tax_base_gain))
         gain *= 0.35
     else:
         gain = 0
-    coop = input('Платили ли вы за использование денежных средств членов кредитного потребительского кооператива, в части превышения установленных размеров?')
+    coop = input(ru.coop_n1)
     if coop.lower() == 'да':
-        coop = int(input('Введите сумму за использование.'))
+        coop = int(input(ru.tax_base_coop))
         coop *=0.35
     else:
         coop = 0
-    deposit = input('Превышал ли ваш доход по вкладам в банках установленных размеров?')
+    deposit = input(ru.deposit_n1)
     if deposit.lower() == 'да':
-        deposit = int(input('Введите ваш доход по вкладам в банках.'))
+        deposit = int(input(ru.tax_base_deposit))
         deposit *=0.35
     else:
         deposit = 0
-    cooperative = input('Выплачивали ли вы проценты за использование сельскохозяйственным кредитным потребительским кооперативом средств, в части превышения установленных размеров?')
+    cooperative = input(ru.cooperative_n1)
     if cooperative.lower() == 'да':
-        cooperative = int(input('Введите сумму выплаченных процентов.'))
+        cooperative = int(input(ru.tax_base_cooperative))
         cooperative *=0.35
     else:
         cooperative = 0
