@@ -1,6 +1,6 @@
 '''
 Кнопова Анна - 50
-Балан Каролина - 40
+Балан Каролина - 45
 Шилкова Ульяна - 40
 '''
 
@@ -11,17 +11,17 @@ s = 0
 print(ru.hello)
 
 r = input(ru.r)
-if r.lower() == 'да':
+if r.lower() == ru.yes:
     asset = input(ru.asset_q1)
-    if asset.lower() == 'да':
+    if asset.lower() == ru.yes:
         family = input(ru.asset_q2)
         exemption = input(ru.asset_q3)
         how_much = input(ru.asset_q4)
         how_long = input(ru.asset_q5)
         profit = input(ru.asset_q6)
         tax_base = int(input(ru.tax_base_asset))
-        if family.lower() == 'да' or exemption.lower() == 'да' or how_much.lower() == 'да' or how_long.lower() == 'да' \
-                or profit.lower() == 'да':
+        if family.lower() == ru.yes or exemption.lower() == ru.yes or how_much.lower() == ru.yes or \
+                how_long.lower() == ru.yes or profit.lower() == ru.yes:
             asset = 0
         elif tax_base < 5000000:
             asset = tax_base * 0.13
@@ -29,7 +29,7 @@ if r.lower() == 'да':
         asset = 0
 
     labor = input(ru.labor_q1)
-    if labor.lower() == 'да':
+    if labor.lower() == ru.yes:
         tax_base = int(input(ru.tax_base_labor))
         if tax_base < 5000000:
             labor = tax_base * 0.13
@@ -39,7 +39,7 @@ if r.lower() == 'да':
         labor = 0
 
     CLC = input(ru.CLC_q1)
-    if CLC.lower() == 'да':
+    if CLC.lower() == ru.yes:
         tax_base = int(input(ru.tax_base_CLC))
         if tax_base < 5000000:
             CLC = tax_base * 0.13
@@ -49,21 +49,21 @@ if r.lower() == 'да':
         CLC = 0
 
     divident = input(ru.divident_q1)
-    if divident.lower() == 'да':
+    if divident.lower() == ru.yes:
         tax_base = int(input(ru.tax_base_divident))
         divident = tax_base * 0.13
     else:
         divident = 0
 
     others = input(ru.others_q1)
-    if others.lower() == 'да':
+    if others.lower() == ru.yes:
         tax_base = int(input(ru.tax_base_other))
         others = tax_base * 0.30
     else:
         others = 0
 
     percentage = input(ru.percentage_n1)
-    if percentage.lower() == 'да':
+    if percentage.lower() == ru.yes:
         percentage = int(input(ru.tax_base_percentage))
         percentage *= 0.09
     else:
