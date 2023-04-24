@@ -1,7 +1,7 @@
 '''
 Кнопова Анна - 50
 Балан Каролина - 45
-Шилкова Ульяна - 40
+Шилкова Ульяна - 45
 '''
 
 import ru_local as ru
@@ -69,35 +69,35 @@ if r.lower() == ru.yes:
     else:
         percentage = 0
     percentage_1 = input(ru.percentage_n2)
-    if percentage_1.lower() == 'да':
+    if percentage_1.lower() == ru.yes:
         percentage = int(input(ru.tax_base_percentage2))
         percentage *= 0.09
     else:
         percentage = 0
 
     gain = input(ru.gain_n1)
-    if gain.lower() == 'да':
+    if gain.lower() == ru.yes:
         gain = int(input(ru.tax_base_gain))
         gain *= 0.35
     else:
         gain = 0
 
     coop = input(ru.coop_n1)
-    if coop.lower() == 'да':
+    if coop.lower() == ru.yes:
         coop = int(input(ru.tax_base_coop))
         coop *=0.35
     else:
         coop = 0
 
     deposit = input(ru.deposit_n1)
-    if deposit.lower() == 'да':
+    if deposit.lower() == ru.yes:
         deposit = int(input(ru.tax_base_deposit))
         deposit *=0.35
     else:
         deposit = 0
 
     cooperative = input(ru.cooperative_n1)
-    if cooperative.lower() == 'да':
+    if cooperative.lower() == ru.yes:
         cooperative = int(input(ru.tax_base_cooperative))
         cooperative *=0.35
     else:
